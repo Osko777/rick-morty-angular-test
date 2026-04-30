@@ -1,24 +1,31 @@
 <div class="header">
   <h1>Mis Favoritos</h1>
+  
+  <div class="search-container">
+    <input 
+      type="text" 
+      placeholder="Filtrar mis favoritos..." 
+      (input)="onSearch($event)"
+      class="search-input"
+    >
+  </div>
 </div>
 
 <div class="character-grid">
-  @for (character of favoriteCharacters(); track character.id) {
+  @for (character of filteredFavorites(); track character.id) {
     <app-character-card 
       [character]="character" 
       (cardClick)="openModal($event)">
     </app-character-card>
   } @empty {
     <div class="empty-state">
-      <h2>Aún no tienes personajes favoritos</h2>
-      <p>Ve a la lista principal y haz clic en la estrella para agregarlos.</p>
+      @if (searchTerm()) {
+        <h2>No se encontró ese favorito</h2>
+        <p>Intenta con otro nombre.</p>
+      } @else {
+        <h2>Aún no tienes personajes favoritos</h2>
+        <p>Ve a la lista principal y agrega algunos.</p>
+      }
     </div>
   }
 </div>
-
-@if (isModalOpen()) {
-  <app-character-modal 
-    [character]="selectedCharacter()!" 
-    (closeModal)="closeModal()">
-  </app-character-modal>
-}
