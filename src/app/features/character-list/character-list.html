@@ -1,0 +1,56 @@
+<div class="header">
+  <h1>Base de datos de personajes</h1>
+  
+  <div class="search-container">
+    <input 
+      type="text" 
+      placeholder="Buscar personaje (ej. Rick, Morty, Summer...)" 
+      (input)="onSearch($event)"
+      class="search-input"
+    >
+  </div>
+</div>
+
+<div class="character-grid">
+  @for (character of characters(); track character.id) {
+    <app-character-card 
+      [character]="character" 
+      (cardClick)="openModal($event)">
+    </app-character-card>
+  } @empty {
+    @if (hasError()) {
+      <p class="loading">No se encontraron personajes en este universo con ese nombre.</p>
+    } @else {
+      <p class="loading">Cargando personajes desde otra dimensión...</p>
+    }
+  }
+</div>
+
+@if (!hasError() && totalPages() > 1) {
+  <div class="pagination">
+    <button 
+      (click)="prevPage()" 
+      [disabled]="currentPage() === 1 || isLoading()"
+      class="btn-page">
+      {{ isLoading() ? '...' : 'Anterior' }}
+    </button>
+    
+    <span class="page-info">
+      Página {{ currentPage() }} de {{ totalPages() }}
+    </span>
+
+    <button 
+      (click)="nextPage()" 
+      [disabled]="currentPage() === totalPages() || isLoading()"
+      class="btn-page">
+      {{ isLoading() ? '...' : 'Siguiente' }}
+    </button>
+  </div>
+}
+
+@if (isModalOpen()) {
+  <app-character-modal 
+    [character]="selectedCharacter()!" 
+    (closeModal)="closeModal()">
+  </app-character-modal>
+}

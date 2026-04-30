@@ -1,0 +1,19 @@
+<div class="card" (click)="onCardClick()">
+  
+  <div class="card-image-container">
+    <img [src]="character.image" [alt]="character.name">
+    
+    <button 
+      class="favorite-btn" 
+      [class.is-favorite]="isFavorite"
+      (click)="onFavoriteClick($event)"
+      title="Toggle Favorite">
+      {{ isFavorite ? '★' : '☆' }}
+    </button>
+  </div>
+
+  <div class="card-info">
+    <h3>{{ character.name }}</h3>
+  </div>
+  
+</div>

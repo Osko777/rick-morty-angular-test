@@ -1,0 +1,41 @@
+<div class="modal-overlay" (click)="onClose()">
+  
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    
+    <button class="close-btn" (click)="onClose()">CERRAR ✖</button>
+
+    <div class="modal-image">
+      <img [src]="character.image" [alt]="character.name">
+    </div>
+
+    <h2>{{ character.name }}</h2>
+
+    <div class="modal-details">
+      <div class="detail-item">
+        <span class="label">Estado:</span>
+        <span class="value">{{ character.status }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <span class="label">Género:</span>
+        <span class="value">{{ character.gender }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Especie:</span>
+        <span class="value">{{ character.species }}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Origen:</span>
+        <span class="value">{{ character.origin.name }}</span>
+      </div>
+
+      <div class="detail-item full-width">
+        <span class="label">Ubicación:</span>
+        <span class="value">{{ character.location.name }}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

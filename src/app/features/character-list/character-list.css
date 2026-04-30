@@ -1,0 +1,81 @@
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.character-grid {
+  display: grid;
+  /* Esto crea columnas responsivas automáticamente */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.search-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: #0984e3;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem; 
+}
+
+.btn-page {
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-page:hover:not(:disabled) {
+  background-color: #074b83;
+}
+
+.btn-page:disabled {
+  background-color: #b2bec3;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-weight: bold;
+  color: #2d3436;
+}

@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  margin-left: 20px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #333;
+}
+
+.nav-links a.active {
+  color: #0984e3; 
+}
+
+.main-content {
+  padding: 2rem 0;
+  background-color: #f5f6fa;
+  min-height: calc(100vh - 70px);
+}
