@@ -8,7 +8,7 @@ import { CharacterModal } from '../../shared/components/character-modal/characte
 @Component({
   selector: 'app-favorites',
   standalone: true,
-  imports: [CommonModule, CharacterCard],
+  imports: [CommonModule, CharacterCard, CharacterModal],
   templateUrl: './favorites.html',
   styleUrls: ['./favorites.css']
 })

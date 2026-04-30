@@ -21,7 +21,6 @@
     <div class="empty-state">
       @if (searchTerm()) {
         <h2>No se encontró ese favorito</h2>
-        <p>Intenta con otro nombre.</p>
       } @else {
         <h2>Aún no tienes personajes favoritos</h2>
         <p>Ve a la lista principal y agrega algunos.</p>
@@ -29,3 +28,10 @@
     </div>
   }
 </div>
+
+@if (isModalOpen()) {
+  <app-character-modal 
+    [character]="selectedCharacter()!" 
+    (closeModal)="closeModal()">
+  </app-character-modal>
+}
