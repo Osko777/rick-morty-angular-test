@@ -21,7 +21,7 @@ export class CharacterService {
   searchCharacters(name: string, page: number = 1): Observable<CharacterResponse> {
     const params = new HttpParams()
       .set('name', name)
-      .set('page', page.toString()); // <-- Agregamos la página aquí
+      .set('page', page.toString()); 
     return this.http.get<CharacterResponse>(this.apiUrl, { params });
   }
 }

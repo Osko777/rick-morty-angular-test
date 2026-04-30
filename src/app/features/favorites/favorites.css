@@ -34,7 +34,7 @@
 
 .search-container {
   margin-top: 1rem;
-  margin-bottom: 2rem; /* Espacio extra para que no pegue con las tarjetas */
+  margin-bottom: 2rem; 
   display: flex;
   justify-content: center;
 }
@@ -44,13 +44,13 @@
   max-width: 400px;
   padding: 10px 15px;
   border: 2px solid #dfe6e9;
-  border-radius: 20px; /* Esto hace que sea ovalada */
+  border-radius: 20px; 
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Un toque de sombra suave */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
 }
 
 .search-input:focus {
-  border-color: #0984e3; /* El color azul al hacer clic */
+  border-color: #0984e3; 
 }

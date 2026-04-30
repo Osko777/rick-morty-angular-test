@@ -10,7 +10,6 @@
 
 .character-grid {
   display: grid;
-  /* Esto crea columnas responsivas automáticamente */
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
   padding: 1rem;

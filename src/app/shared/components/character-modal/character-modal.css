@@ -1,4 +1,4 @@
-/* El fondo oscuro que cubre toda la pantalla */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -9,10 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegura que esté por encima de todo */
+  z-index: 1000; 
 }
 
-/* La caja blanca central */
 .modal-content {
   background-color: white;
   border-radius: 12px;
@@ -22,7 +21,6 @@
   position: relative;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  /* Pequeña animación de entrada */
   animation: slideIn 0.3s ease-out forwards;
 }
 
@@ -83,7 +81,7 @@ h2 {
 }
 
 .detail-item.full-width {
-  grid-column: 1 / -1; /* Hace que ocupe las dos columnas */
+  grid-column: 1 / -1; 
 }
 
 .label {
